@@ -10,6 +10,11 @@ namespace RouteTesting.Mvc
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Foo",
+                url: "Foo/{action}",
+                defaults: new { controller = "RenamedFoo", action = "Bar" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
